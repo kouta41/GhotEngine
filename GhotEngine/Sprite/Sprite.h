@@ -40,7 +40,8 @@ public: // メンバ関数
 	void SetPosition(const Vector2& position) { position_ = position; }
 	// 色の設定
 	void SetColor(const Vector4& color) { *materialData_ = color; }
-
+	//サイズの指定
+	void SetSize(const Vector2& size) { size_ = size; }
 #pragma endregion
 
 	/// <summary>
@@ -58,4 +59,7 @@ private: // メンバ変数
 	Vector2 position_ = {};
 	static Sprite* sprite_;
 	Vector4* materialData_ = nullptr;
+
+	Vector2 size_ = { 100.0f,100.0f };
 };
+
