@@ -26,18 +26,18 @@ void Sprite::Initialize() {
 	sResource_.vertexResource->Map(0, nullptr, reinterpret_cast<void**>(&vertexDataSprite));
 
 	// 1枚目の三角形
-	vertexDataSprite[0].position = { 0.0f, size_.y,0.0f, 1.0f }; // 左下LB
+	vertexDataSprite[0].position = { 0.0f, 360.0f,0.0f, 1.0f }; // 左下
 	vertexDataSprite[0].texcoord = { 0.0f, 1.0f };
-	vertexDataSprite[1].position = { 0.0f, 0.0f, 0.0f, 1.0f }; // 左上LT
+	vertexDataSprite[1].position = { 0.0f, 0.0f, 0.0f, 1.0f }; // 左上
 	vertexDataSprite[1].texcoord = { 0.0f, 0.0f };
-	vertexDataSprite[2].position = { size_.x, size_.y, 0.0f,1.0f }; // 右下RB
+	vertexDataSprite[2].position = { 640.0f, 360.0f, 0.0f,1.0f }; // 右下
 	vertexDataSprite[2].texcoord = { 1.0f,1.0f };
 	// 2枚目の三角形
-	vertexDataSprite[3].position = { 0.0f, 0.0f, 0.0f, 1.0f }; // 左上LT
+	vertexDataSprite[3].position = { 0.0f, 0.0f, 0.0f, 1.0f }; // 左上
 	vertexDataSprite[3].texcoord = { 0.0f, 0.0f };
-	vertexDataSprite[4].position = { size_.x, 0.0f, 0.0f, 1.0f }; // 右上RT
+	vertexDataSprite[4].position = { 640.0f, 0.0f, 0.0f, 1.0f }; // 右上
 	vertexDataSprite[4].texcoord = { 1.0f, 0.0f };
-	vertexDataSprite[5].position = { size_.x, size_.y, 0.0f,1.0f }; // 右下RB
+	vertexDataSprite[5].position = { 640.0f, 360.0f, 0.0f,1.0f }; // 右下
 	vertexDataSprite[5].texcoord = { 1.0f,1.0f };
 
 #pragma endregion
@@ -73,13 +73,22 @@ Sprite* Sprite::Create(Vector2 position, Vector4 color)
 /// </summary>
 /// <param name="v"></param>
 /// <param name="t"></param>
-void Sprite::Draw(ViewProjection viewProjection, uint32_t texHandle)
+void Sprite::Draw(ViewProjection viewProjection)
 {
+	//テクスチャが無いと止める
+	assert(texHandle_);
+
+	//非表示フラグ(trueは表示しない)
+	if (isInvisible_) {
+		return;
+	}
 
 	worldTransform_.UpdateMatrix();
 	worldTransform_.STransferMatrix(sResource_.wvpResource, viewProjection);
 	worldTransform_.translate.x = GetPosition().x;
 	worldTransform_.translate.y = GetPosition().y;
+	worldTransform_.scale.x = GetSize().x;
+	worldTransform_.scale.y = GetSize().y;
 
 	Property property = GraphicsPipeline::GetInstance()->GetPSO().Sprite2D;
 
@@ -93,7 +102,7 @@ void Sprite::Draw(ViewProjection viewProjection, uint32_t texHandle)
 	DirectXCommon::GetCommandList()->SetGraphicsRootConstantBufferView(0, sResource_.materialResource->GetGPUVirtualAddress());
 	// wvp用のCBufferの場所を設定
 	DirectXCommon::GetCommandList()->SetGraphicsRootConstantBufferView(1, sResource_.wvpResource->GetGPUVirtualAddress());
-	DirectXCommon::GetCommandList()->SetGraphicsRootDescriptorTable(2, TextureManager::GetInstance()->GetGPUHandle(texHandle));
+	DirectXCommon::GetCommandList()->SetGraphicsRootDescriptorTable(2, TextureManager::GetInstance()->GetGPUHandle(texHandle_));
 	// 描画。(DrawCall/ドローコール)。3頂点で1つのインスタンス。インスタンスについては今後
 	DirectXCommon::GetCommandList()->DrawInstanced(6, 1, 0, 0);
 

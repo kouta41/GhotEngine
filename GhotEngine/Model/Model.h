@@ -40,24 +40,30 @@ public:
 	/// <returns></returns>
 	static Model* CreateObj(const std::string& filename);
 
-	/// <summary>
-	/// 描画
-	/// </summary>
-	void Draw(WorldTransform worldTransform, ViewProjection viewprojection, uint32_t texHandle);
+
 
 	/// <summary>
 	/// Objの描画
 	/// </summary>
 	void Draw(WorldTransform worldTransform, ViewProjection viewprojection);
 
+	
+
+
+#pragma region Getter
+
+#pragma endregion 
+
+#pragma region Setter
 	// setter
 	void SetTexHandle(uint32_t texHandle) { texHandle_ = texHandle; }
-
 	// ライティングのsetter
 	int32_t SetEnableLighting(int32_t enableLighting) { return materialData_->enableLighting = enableLighting; }
 	// 色のsetter
 	Vector4 SetColor(Vector4 color) { return materialData_->color = color; }
-
+	//非表示フラグの設定
+	void SetIsInvisible(const bool isInvisible) { isInvisible_ = isInvisible; }
+#pragma endregion
 
 private:
 
@@ -86,4 +92,7 @@ private: // メンバ変数
 	Material* materialData_ = nullptr;
 	DirectionalLight* directionalLightData_ = nullptr;
 	uint32_t texHandle_ = 0;
+
+	//非表示フラグ
+	bool isInvisible_ = false;
 };

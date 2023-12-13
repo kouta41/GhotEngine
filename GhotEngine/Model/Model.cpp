@@ -82,13 +82,12 @@ Model* Model::CreateObj(const std::string& filename) {
 }
 
 
-void Model::Draw(WorldTransform worldTransform, ViewProjection viewprojection, uint32_t texHandle)
-{
-	state_->Draw(worldTransform, viewprojection, texHandle);
-}
-
 void Model::Draw(WorldTransform worldTransform, ViewProjection viewprojection)
 {
+	//非表示フラグ(trueは表示しない)
+	if (isInvisible_) {
+		return;
+	}
 
 	worldTransform.TransferMatrix(resource_.wvpResource, viewprojection);
 
