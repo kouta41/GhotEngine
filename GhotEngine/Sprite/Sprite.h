@@ -29,6 +29,14 @@ public: // メンバ関数
 	/// <returns></returns>
 	static Sprite* Create(Vector2 position={0.0f,0.0f}, Vector4 color = {1,1,1,1});
 
+
+	/// <summary>
+	/// 描画
+	/// </summary>
+	/// <param name="v"></param>
+	/// <param name="t"></param>
+	void Draw(ViewProjection viewProjection);
+
 #pragma region Getter
 	// 座標の取得
 	const Vector2& GetPosition() const { return position_; }
@@ -51,12 +59,7 @@ public: // メンバ関数
 	void SetTexHandle(const uint32_t texHandle) { texHandle_ = texHandle; }
 #pragma endregion
 
-	/// <summary>
-	/// 描画
-	/// </summary>
-	/// <param name="v"></param>
-	/// <param name="t"></param>
-	void Draw(ViewProjection viewProjection);
+	
 
 private: // メンバ変数
 

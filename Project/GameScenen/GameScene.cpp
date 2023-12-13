@@ -13,11 +13,14 @@ void GameScene::Initialize() {
 
 	texHandle_= TextureManager::Load("resources/uvChecker.png");
 
+
 	model_.reset(Model::CreateObj("cube.obj"));
 	model_->SetTexHandle(texHandle_);
 
 	sprite_.reset(Sprite::Create());
 	sprite_->SetTexHandle(texHandle_);
+
+	
 }
 
 // 更新
