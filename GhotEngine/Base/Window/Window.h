@@ -1,6 +1,8 @@
 #pragma once
 #include <Windows.h>
 #include <cstdint>
+
+
 #include "ImGuiManager/ImGuiManager.h"
 
 
@@ -50,5 +52,7 @@ private: // メンバ変数
 	HWND hwnd_ = nullptr;   // ウィンドウハンドル
 	WNDCLASS wc{}; // ウィンドウクラス
 	UINT windowStyle_;
+
+	
 
 };
