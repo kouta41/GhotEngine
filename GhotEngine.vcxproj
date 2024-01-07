@@ -62,7 +62,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(ProjectDir)GhotEngine\Audio;$(ProjectDir)GhotEngine\CameraRole;$(ProjectDir)GhotEngine\Math;$(ProjectDir)GhotEngine\Base\DX12;$(ProjectDir)GhotEngine\Base\Window;$(ProjectDir)externals\imgui;$(ProjectDir)GhotEngine\Utility;$(ProjectDir)GhotEngine\CreateResource;$(ProjectDir)GhotEngine\GraphicsPipeline;$(ProjectDir)GhotEngine\Input;$(ProjectDir)GhotEngine\ShaderFile;$(ProjectDir)GhotEngine\Transform;$(ProjectDir)GhotEngine;$(ProjectDir)GhotEngine\Utility\ImGuiManager;$(ProjectDir)GhotEngine\TextureManager;$(ProjectDir)GhotEngine\Model;$(ProjectDir)GhotEngine\Sprite;$(ProjectDir)Project\GameScenen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)GhotEngine\Audio;$(ProjectDir)GhotEngine\CameraRole;$(ProjectDir)GhotEngine\Math;$(ProjectDir)GhotEngine\Base\DX12;$(ProjectDir)GhotEngine\Base\Window;$(ProjectDir)externals\imgui;$(ProjectDir)GhotEngine\Utility;$(ProjectDir)GhotEngine\CreateResource;$(ProjectDir)GhotEngine\GraphicsPipeline;$(ProjectDir)GhotEngine\Input;$(ProjectDir)GhotEngine\ShaderFile;$(ProjectDir)GhotEngine\Transform;$(ProjectDir)GhotEngine;$(ProjectDir)GhotEngine\Utility\ImGuiManager;$(ProjectDir)GhotEngine\TextureManager;$(ProjectDir)GhotEngine\Model;$(ProjectDir)GhotEngine\Sprite;$(ProjectDir)Project\GameScenen;$(ProjectDir)Project\Skydome;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -86,7 +86,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(ProjectDir)GhotEngine\Audio;$(ProjectDir)GhotEngine\CameraRole;$(ProjectDir)GhotEngine\Math;$(ProjectDir)GhotEngine\Base\DX12;$(ProjectDir)GhotEngine\Base\Window;$(ProjectDir)externals\imgui;$(ProjectDir)GhotEngine\Utility;$(ProjectDir)GhotEngine\CreateResource;$(ProjectDir)GhotEngine\GraphicsPipeline;$(ProjectDir)GhotEngine\Input;$(ProjectDir)GhotEngine\ShaderFile;$(ProjectDir)GhotEngine\Transform;$(ProjectDir)GhotEngine;$(ProjectDir)GhotEngine\Utility\ImGuiManager;$(ProjectDir)GhotEngine\TextureManager;$(ProjectDir)GhotEngine\Model;$(ProjectDir)GhotEngine\Sprite;$(ProjectDir)Project\GameScenen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)GhotEngine\Audio;$(ProjectDir)GhotEngine\CameraRole;$(ProjectDir)GhotEngine\Math;$(ProjectDir)GhotEngine\Base\DX12;$(ProjectDir)GhotEngine\Base\Window;$(ProjectDir)externals\imgui;$(ProjectDir)GhotEngine\Utility;$(ProjectDir)GhotEngine\CreateResource;$(ProjectDir)GhotEngine\GraphicsPipeline;$(ProjectDir)GhotEngine\Input;$(ProjectDir)GhotEngine\ShaderFile;$(ProjectDir)GhotEngine\Transform;$(ProjectDir)GhotEngine;$(ProjectDir)GhotEngine\Utility\ImGuiManager;$(ProjectDir)GhotEngine\TextureManager;$(ProjectDir)GhotEngine\Model;$(ProjectDir)GhotEngine\Sprite;$(ProjectDir)Project\GameScenen;$(ProjectDir)Project\Skydome;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -130,6 +130,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="GhotEngine\Transform\WorldTransform.cpp" />
     <ClCompile Include="GhotEngine\Sprite\Sprite.cpp" />
     <ClCompile Include="GhotEngine\TextureManager\TextureManager.cpp" />
+    <ClCompile Include="Project\Skydome\Skydome.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GhotEngine\Audio\Audio.h" />
@@ -166,6 +167,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="GhotEngine\Transform\WorldTransform.h" />
     <ClInclude Include="GhotEngine\Sprite\Sprite.h" />
     <ClInclude Include="GhotEngine\TextureManager\TextureManager.h" />
+    <ClInclude Include="Project\Skydome\Skydome.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="GhotEngine\ShaderFile\Object3d.PS.hlsl">

@@ -95,6 +95,7 @@
       <Filter>GhotEngine\Base\Window</Filter>
     </ClCompile>
     <ClCompile Include="GhotEngine\Audio\Audio.cpp" />
+    <ClCompile Include="Project\Skydome\Skydome.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GhotEngine\CameraRole\CameraRole.h">
@@ -197,6 +198,7 @@
       <Filter>GhotEngine\Base\Window</Filter>
     </ClInclude>
     <ClInclude Include="GhotEngine\Audio\Audio.h" />
+    <ClInclude Include="Project\Skydome\Skydome.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="GhotEngine">

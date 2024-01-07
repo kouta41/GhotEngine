@@ -5,6 +5,7 @@
 #include "ModelSphere.h"
 #include "ModelCube.h"
 #include "Input.h"
+#include "Skydome.h"
 #include "ImGuiManager/ImGuiManager.h"
 
 
@@ -52,7 +53,10 @@ private: // メンバ変数
 
 	uint32_t texHandle_ = 0;
 
-	Vector2 pos_ = { 0.0f,0.0f };
-	Vector2 size_ = { 1.0f,1.0f };
-	bool Flag = false;
+	//天球
+	std::unique_ptr<Skydome> skydome_{};
+	//3Dモデル
+	std::unique_ptr<Model> modelSkydome_{};
+
+	uint32_t texHandleSkydome_ = 0;
 };
