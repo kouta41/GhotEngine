@@ -6,14 +6,16 @@
 #include "ModelCube.h"
 #include "Input.h"
 #include "Skydome.h"
+#include "MainCamera.h"
 #include "ImGuiManager/ImGuiManager.h"
-
-
+#include "IsScen.h"
+#include "Player.h"
+#include "Enemy.h"
 
 /// <summary>
 /// ゲームシーン
 /// </summary>
-class GameScene {
+class GameScene : public IScene {
 
 public: // メンバ関数
 	/// <summary>
@@ -41,6 +43,21 @@ public: // メンバ関数
 	/// </summary>
 	void Draw();
 
+
+	/// <summary>
+	/// 敵発生データの読み込み
+	/// </summary>
+	void LoadEnemyPopData();
+
+	/// <summary>
+	/// 敵発生コマンドの更新
+	/// </summary>
+	void UpdateEnemyPopCommands();
+
+	void EnemyInit(Vector3);
+
+	void AddEnemy(Enemy* enemy);
+
 private: // メンバ変数
 
 	WorldTransform worldTransform_;
@@ -57,6 +74,31 @@ private: // メンバ変数
 	std::unique_ptr<Skydome> skydome_{};
 	//3Dモデル
 	std::unique_ptr<Model> modelSkydome_{};
-
+	//テクスチャ
 	uint32_t texHandleSkydome_ = 0;
+	
+	//敵キャラ
+	std::list<Enemy*> enemys_;
+	// 待機タイマー
+	int32_t waitTimer;
+	// 待機フラグ
+	bool isWait = false;
+
+	// 敵発生コマンド
+	std::stringstream enemyPopCommands;
+
+	//メインカメラ
+	std::unique_ptr<MainCamera> mainCamera_;
+
+	/////player
+	std::unique_ptr<Player> player_{};
+	//Playerのモデル
+	std::unique_ptr<Model> playerModel_{};
+	//Playerのテクスチャハンドル
+	uint32_t playerTextureHandle_{}; 
+	Vector3 playerInitializePosition_{};
+
+	Input::ButtonState a_{};
+
+	float count = 0;
 };

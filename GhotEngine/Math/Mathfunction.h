@@ -5,6 +5,19 @@
 #include "Matrix4x4.h"
 #include "Vector3.h"
 
+
+struct AABB {
+	Vector3 min; // 最小点
+	Vector3 max; // 最大点
+};
+
+struct Transform{
+	Vector3 scale;
+	Vector3 rotate;
+	Vector3 translate;
+};
+
+
 // ベクトル変換
 Vector3 TransformNormal(const Vector3& v, const Matrix4x4& m);
 

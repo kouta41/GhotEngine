@@ -14,7 +14,7 @@ void Engine::Initialize() {
 	dxCommon_ = DirectXCommon::GetInstance();
 
 	// ウィンドウの作成
-	win_->CreateGameWindow(L"DirectXGame");
+	win_->CreateGameWindow(L"FPSシューティング");
 	// DirectX初期化
 	dxCommon_->Initialize(win_);
 	Input::Initialize();
@@ -22,8 +22,8 @@ void Engine::Initialize() {
 	TextureManager::GetInstance()->Initialize();
 
 	//ゲームシーンの初期化
-	gameScene_ = new GameScene();
-	gameScene_->Initialize();
+	gameManager_ = std::make_unique<GameManager>();
+
 	
 	// ImGuiの初期化
 	imguiManager_ = ImGuiManager::GetInstance();
@@ -47,15 +47,16 @@ void Engine::Run() {
 		//imgui受付開始
 		imguiManager_->Begin();
 
-		//ゲームシーンの更新
-		gameScene_->Update();
+		// ゲームの処理
+		gameManager_->Initialize();
+		gameManager_->Run();
 		//imguiManager_->End();
 
 		// 描画前処理
 		dxCommon_->PreDraw();
 
-		//ゲームシーンの描画
-		gameScene_->Draw();
+		// シーン描画
+		gameManager_->Draw();
 
 		imguiManager_->End();
 

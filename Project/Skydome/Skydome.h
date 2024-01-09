@@ -3,9 +3,7 @@
 #include "WorldTransform.h"
 #include <cassert>
 
-class IStage;
-class Skydome
-{
+class Skydome{
 public:
 	/// <summary>
 	/// 初期化

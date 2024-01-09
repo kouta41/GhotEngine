@@ -3,12 +3,12 @@
 #include <cassert>
 #define DIRECTINPUT_VERSION 0x0800
 #include <dinput.h>
+#include <Xinput.h>
 #pragma comment(lib,"xinput.lib")
 #pragma comment(lib,"dinput8.lib")
 
 class Input {
 public:
-
 
 	static Input* GetInstance();
 
@@ -20,6 +20,20 @@ public:
 
 	bool PushKeyPressed(uint32_t keyNum);
 
+	bool GetJoystickState(XINPUT_STATE& out) const;
+
+	//void SetJoystickDeadZone(int32_t deadZoneL, int32_t deadZoneR);
+
+	struct ButtonState {
+		bool isPressed;
+		bool wasPressed;
+
+		ButtonState() : isPressed(false), wasPressed(false) {}
+	};
+
+	void UpdateButtonState(ButtonState& state, bool isPressed);
+
+
 private:
 
 	IDirectInput8* directInput = nullptr;
@@ -29,6 +43,7 @@ private:
 	BYTE preKeys[256] = {};
 
 	bool isInitialize = false;
+
 
 
 
