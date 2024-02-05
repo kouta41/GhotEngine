@@ -47,7 +47,7 @@ public:
 	/// </summary>
 	void Draw(WorldTransform worldTransform, ViewProjection viewprojection);
 
-	
+
 
 
 #pragma region Getter

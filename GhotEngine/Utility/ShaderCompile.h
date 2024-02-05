@@ -1,5 +1,6 @@
 #pragma once
 #include "DirectX12.h"
+#include "StringUtility.h"
 #include <dxcapi.h>
 #pragma comment(lib, "dxcompiler.lib")
 

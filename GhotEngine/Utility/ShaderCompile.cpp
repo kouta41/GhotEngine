@@ -1,5 +1,5 @@
 #include "ShaderCompile.h"
-#include "StringUtility.h"
+
 
 // CompileShader関数
 IDxcBlob* ShaderCompile::CompileShader(

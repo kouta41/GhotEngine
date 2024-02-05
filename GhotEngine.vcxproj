@@ -62,7 +62,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(ProjectDir)GhotEngine\Audio;$(ProjectDir)GhotEngine\CameraRole;$(ProjectDir)GhotEngine\Math;$(ProjectDir)GhotEngine\Base\DX12;$(ProjectDir)GhotEngine\Base\Window;$(ProjectDir)externals\imgui;$(ProjectDir)GhotEngine\Utility;$(ProjectDir)GhotEngine\CreateResource;$(ProjectDir)GhotEngine\GraphicsPipeline;$(ProjectDir)GhotEngine\Input;$(ProjectDir)GhotEngine\ShaderFile;$(ProjectDir)GhotEngine\Transform;$(ProjectDir)GhotEngine;$(ProjectDir)GhotEngine\Utility\ImGuiManager;$(ProjectDir)GhotEngine\TextureManager;$(ProjectDir)GhotEngine\Model;$(ProjectDir)GhotEngine\Sprite;$(ProjectDir)Project\GameScenen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)GhotEngine\Audio;$(ProjectDir)GhotEngine\CameraRole;$(ProjectDir)GhotEngine\Math;$(ProjectDir)GhotEngine\Base\DX12;$(ProjectDir)GhotEngine\Base\Window;$(ProjectDir)externals\imgui;$(ProjectDir)GhotEngine\Utility;$(ProjectDir)GhotEngine\CreateResource;$(ProjectDir)GhotEngine\GraphicsPipeline;$(ProjectDir)GhotEngine\Input;$(ProjectDir)GhotEngine\ShaderFile;$(ProjectDir)GhotEngine\Transform;$(ProjectDir)GhotEngine;$(ProjectDir)GhotEngine\Utility\ImGuiManager;$(ProjectDir)GhotEngine\TextureManager;$(ProjectDir)GhotEngine\Model;$(ProjectDir)GhotEngine\Sprite;$(ProjectDir)Project\GameScenen;$(ProjectDir)externals\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -86,7 +86,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>$(ProjectDir)GhotEngine\Audio;$(ProjectDir)GhotEngine\CameraRole;$(ProjectDir)GhotEngine\Math;$(ProjectDir)GhotEngine\Base\DX12;$(ProjectDir)GhotEngine\Base\Window;$(ProjectDir)externals\imgui;$(ProjectDir)GhotEngine\Utility;$(ProjectDir)GhotEngine\CreateResource;$(ProjectDir)GhotEngine\GraphicsPipeline;$(ProjectDir)GhotEngine\Input;$(ProjectDir)GhotEngine\ShaderFile;$(ProjectDir)GhotEngine\Transform;$(ProjectDir)GhotEngine;$(ProjectDir)GhotEngine\Utility\ImGuiManager;$(ProjectDir)GhotEngine\TextureManager;$(ProjectDir)GhotEngine\Model;$(ProjectDir)GhotEngine\Sprite;$(ProjectDir)Project\GameScenen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)GhotEngine\Audio;$(ProjectDir)GhotEngine\CameraRole;$(ProjectDir)GhotEngine\Math;$(ProjectDir)GhotEngine\Base\DX12;$(ProjectDir)GhotEngine\Base\Window;$(ProjectDir)externals\imgui;$(ProjectDir)GhotEngine\Utility;$(ProjectDir)GhotEngine\CreateResource;$(ProjectDir)GhotEngine\GraphicsPipeline;$(ProjectDir)GhotEngine\Input;$(ProjectDir)GhotEngine\ShaderFile;$(ProjectDir)GhotEngine\Transform;$(ProjectDir)GhotEngine;$(ProjectDir)GhotEngine\Utility\ImGuiManager;$(ProjectDir)GhotEngine\TextureManager;$(ProjectDir)GhotEngine\Model;$(ProjectDir)GhotEngine\Sprite;$(ProjectDir)Project\GameScenen;$(ProjectDir)externals\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

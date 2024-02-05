@@ -41,18 +41,6 @@ public: // メンバ関数
 	void Draw();
 
 private: // メンバ変数
+	
 
-	WorldTransform worldTransform_;
-	ViewProjection viewProjection_;
-	//3Dモデル
-	std::unique_ptr<Model> model_{};
-
-	//テクスチャ
-	std::unique_ptr<Sprite> sprite_{};
-
-	uint32_t texHandle_ = 0;
-
-	Vector2 pos_ = { 0.0f,0.0f };
-	Vector2 size_ = { 1.0f,1.0f };
-	bool Flag = false;
 };

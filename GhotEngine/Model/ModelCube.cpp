@@ -115,9 +115,9 @@ void ModelCube::Initialize(Model* state) {
 
 }
 
-void ModelCube::Draw(WorldTransform worldTransform, ViewProjection viewProjection, uint32_t texHandle) {
+void ModelCube::Draw(WorldTransform worldTransform, ViewProjection viewProjection_, uint32_t texHandle) {
 
-	worldTransform.TransferMatrix(resource_.wvpResource, viewProjection);
+	worldTransform.TransferMatrix(resource_.wvpResource, viewProjection_);
 
 	Property property = GraphicsPipeline::GetInstance()->GetPSO().Object3D;
 
